@@ -95,6 +95,10 @@ function createFieldWrapper(fd, tagName = "div") {
         fieldWrapper.setAttribute('itemtype', 'component');
         fieldWrapper.setAttribute('itemid', generateItemId(fd.Name));
         fieldWrapper.setAttribute('itemscope', '');
+        fieldWrapper.setAttribute('data-editor-itemlabel', fd.Label);
+        if (fd.Name.search('firstName') != -1) {
+            fieldWrapper.setAttribute('data-editor-itemmodel', 'name');
+        }       
     }
     const nameStyle = fd.Name ? ` form-${fd.Name}` : "";
     const fieldId = `form-${fd.Type}-wrapper${nameStyle}`;
@@ -385,6 +389,10 @@ export default async function decorate(block) {
         form.setAttribute('itemtype', 'container');
         form.setAttribute('itemid', generateItemId());
         form.setAttribute('itemscope', '');
+        form.setAttribute('data-editor-itemlabel', 'Form Container');
+        form.setAttribute('data-editor-itemmodel', 'container');
+        form.setAttribute('data-editor-behavior', true);
+
         block.setAttribute('itemid', generateItemId());
         formLink.replaceWith(form);
     }
