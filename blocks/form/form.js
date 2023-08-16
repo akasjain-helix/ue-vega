@@ -91,7 +91,7 @@ function createHelpText(fd) {
 
 function createFieldWrapper(fd, tagName = "div") {
     const fieldWrapper = document.createElement(tagName);
-    if (fd.Type !== 'radio') {
+    if (fd.Type !== 'radio' && fd.Type !== 'fieldset') {
         fieldWrapper.setAttribute('itemtype', 'component');
         fieldWrapper.setAttribute('itemid', generateItemId(fd.Name));
         fieldWrapper.setAttribute('itemscope', '');
@@ -191,6 +191,11 @@ function createLegend(fd) {
 function createFieldSet(fd) {
     const wrapper = createFieldWrapper(fd, "fieldset");
     wrapper.name = fd.Name;
+    wrapper.setAttribute('itemtype', 'container');
+    wrapper.setAttribute('itemid', generateItemId(fd.Name));
+    wrapper.setAttribute('itemscope', '');
+    wrapper.setAttribute('data-editor-itemlabel', fd.Label);
+    wrapper.setAttribute('data-editor-behavior', "true");
     //   wrapper.replaceChildren(createLegend(fd));
     return wrapper;
 }
