@@ -195,7 +195,7 @@ function createFieldSet(fd) {
     wrapper.setAttribute('itemid', generateItemId(fd.Name));
     wrapper.setAttribute('itemscope', '');
     wrapper.setAttribute('data-editor-itemlabel', fd.Label);
-    wrapper.setAttribute('data-editor-behavior', "true");
+    wrapper.setAttribute('data-editor-behavior', "");
     //   wrapper.replaceChildren(createLegend(fd));
     return wrapper;
 }
