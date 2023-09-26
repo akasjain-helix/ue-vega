@@ -388,9 +388,9 @@ function generateItemId(name) {
 
 function generateAemItemId(name) {
     if (name) {
-        return `urn:aem:/content/forms/af/ue-vega/jcr:content/${name}`;
+        return `urn:aemconnection:/content/forms/af/ue-vega/jcr:content/${name}`;
     } else {
-        return `urn:aem:/content/forms/af/ue-vega/default`;
+        return `urn:aemconnection:/content/forms/af/ue-vega/default`;
     }
 }
 
