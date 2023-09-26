@@ -93,7 +93,7 @@ function createFieldWrapper(fd, tagName = "div") {
     const fieldWrapper = document.createElement(tagName);
     if (fd.Type !== 'radio' && fd.Type !== 'fieldset') {
         fieldWrapper.setAttribute('itemtype', 'component');
-        fieldWrapper.setAttribute('itemid', generateItemId(fd.Name));
+        fieldWrapper.setAttribute('itemid', generateItemId(fd.Id));
         fieldWrapper.setAttribute('itemscope', '');
         fieldWrapper.setAttribute('data-editor-itemlabel', fd.Label || fd.Name);
         fieldWrapper.setAttribute('data-editor-itemmodel', fd.Type);
@@ -191,7 +191,7 @@ function createFieldSet(fd) {
     const wrapper = createFieldWrapper(fd, "fieldset");
     wrapper.name = fd.Name;
     wrapper.setAttribute('itemtype', 'container');
-    wrapper.setAttribute('itemid', generateItemId(fd.Name));
+    wrapper.setAttribute('itemid', generateItemId(fd.Id));
     wrapper.setAttribute('itemscope', '');
     wrapper.setAttribute('data-editor-itemlabel', fd.Label);
     wrapper.setAttribute('data-editor-behavior', "component");
@@ -380,7 +380,7 @@ function topFormExpressBox() {
 
 function generateItemId(name) {
     if (name) {
-        return `urn:fnkconnection:${window.formPath}:default:Name:${name}`;
+        return `urn:fnkconnection:${window.formPath}:default:Id:${name}`;
     } else {
         return `urn:fnkconnection:${window.formPath}:default`;
     }
