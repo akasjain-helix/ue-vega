@@ -26,7 +26,7 @@
     --form-label-color: var(--label-color);
     --form-label-font-size: var(--form-font-size-s);
     --form-label-font-weight: 400;
-    --form-fieldset-border: 0;
+    --form-fieldset-border: 2px;
     --form-fieldset-marign: 0;
     --form-fieldset-legend-color: var(--form-label-color);
     --form-fieldset-legend-font-size: var(--form-label-font-size);
